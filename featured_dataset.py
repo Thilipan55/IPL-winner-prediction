@@ -11,6 +11,9 @@ if df is not None:
         df[i+'_encoded']=encoder.fit_transform(df[i])
         mapping=dict(zip(encoder.classes_,encoder.transform(encoder.classes_)))
         print(mapping)
+for team in df['team1'].unique():
+    print(team)
+
 preview_cols = ['team1', 'team1_encoded', 'team2', 'team2_encoded', 'winner', 'winner_encoded']
 print(df[preview_cols].head())
-df.to_csv(output_file, index=False)
+#df.to_csv(output_file, index=False)
